@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="open">click</div>
+  <script>
+    function callback(e) {
+      // prep work
+      e = e || window.event
+      var target = e.target || e.srcElement
+      //actual callback work
+      console.log(target.nodeName)
+    }
+
+    function addEvent(el) {
+      if (document.addEventListener) {
+        el.addEventListener('click', callback, false)
+      } else if (document.attachEvent) {
+        el.attachEvent('onclick', callback)
+      } else {
+        el.onclick = callback
+      }
+    }
+
+    var clickElement = document.getElementById('open')
+    addEvent(clickElement)
+
+  </script>
+</body>
+
+</html>

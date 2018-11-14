@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="closer">hello Dom</div>
+</body>
+<script>
+  var my = document.getElementById('closer')
+  my.innerHTML = '<em>your </em> final o!!!'
+  my.style.border = '1px solid red'
+
+  my.firstChild.firstChild.nodeValue = 'Bill'
+  my.style.cssText = 'font-size:24px; font-weight: bold;'
+  console.log(my.style.cssText)
+  console.log(my.firstChild.firstChild.nodeValue)
+</script>
+</html>
