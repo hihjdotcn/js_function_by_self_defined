@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <div id="text">Text will be here</div>
-  <div id="html">Html will be here</div>
-  <div id="xml">XML will be here</div>
-  <script>
-    function request(url, callback) {
-      var xhr = new XMLHttpRequest()
-      xhr.onreadystatechange = (function (myxhr) {
-        return function () {
-          if(myxhr.readyState === 4 && myxhr.status === 200) {
-            callback(myxhr)
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="text">Text will be here</div>
+    <div id="html">Html will be here</div>
+    <div id="xml">XML will be here</div>
+    <script>
+      function request(url, callback) {
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = (function(myxhr) {
+          return function() {
+            if (myxhr.readyState === 4 && myxhr.status === 200) {
+              callback(myxhr)
+            }
           }
-        }
-      }(xhr))
-    }
-    request(
-      'http://www.phpid.com/files/jsoop/content.txt',
-      function (o) {
-        document.getElementById('text').innerHTML =
-          o.responseText
+        })(xhr)
       }
-    )
-    request(
-      'http://www.phpid.com/files/jsoop/content.html',
-      function (o) {
-        document.getElementById('html').innerHTML =
-          o.responseText
-      }
-    )
-    request(
-      'http://www.phpid.com/files/jsoop/content.xml',
-      function (o) {
-        document.getElementById('xml').innerHTML =
-          o.responseXML.getElementsByTagName('root')[0].firstChild.nodeValue
-      }
-    )
-
-  </script>
-</body>
+      request('http://www.phpid.com/files/jsoop/content.txt', function(o) {
+        document.getElementById('text').innerHTML = o.responseText
+      })
+      request('../files/content.html', function(o) {
+        document.getElementById('html').innerHTML = o.responseText
+      })
+      request('http://www.phpid.com/files/jsoop/content.xml', function(o) {
+        document.getElementById(
+          'xml'
+        ).innerHTML = o.responseXML.getElementsByTagName(
+          'root'
+        )[0].firstChild.nodeValue
+      })
+    </script>
+  </body>
 </html>
