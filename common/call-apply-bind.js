@@ -2,9 +2,7 @@ function f(a, b) {
     return a + b
 }
 
-var o = function () {
-
-}
+var o = function () { }
 
 console.log(f.call(o, 3, 2))
 console.log(f.apply(o, [3, 2]))
@@ -21,3 +19,4 @@ function f(y) {
 var o = { x: 1 }
 var g = f.bind(o)
 console.log(g(3))
+console.log(f(3))
