@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parentElement">
+      <div>this is the first.</div>
+      <span id="childElement">foo bar</span>
+    </div>
+    <script>
+      // 创建要插入的节点
+      var newNode = document.createElement('div')
+      newNode.innerHTML = 'Hello world!'
+      // 获得父节点的引用
+      // var parentDiv = document.getElementById('childElement').parentNode
+      // console.log(parentDiv)
+      // 实验1
+      var sp2 = document.getElementById('childElement')
+      // parentDiv.insertBefore(newNode, sp2)
+      // var newTextNode = document.createTextNode('text node content')
+      // newNode.appendChild(newTextNode)
+
+      // 增加节点
+      sp2.insertAdjacentElement('beforebegin', newNode)
+    </script>
+  </body>
+</html>

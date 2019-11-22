@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="sparkline" data-id="nihao">
+      <p>nihao</p>
+      <div>hello!</div>
+    </div>
+    <script>
+      onload = (function() {
+        var sparkline = document.getElementsByClassName('sparkline')
+        var dataset = sparkline[0].dataset
+        console.log(dataset.id)
+        console.log(sparkline[0].getAttribute('data-id'))
+      })()
+    </script>
+  </body>
+</html>

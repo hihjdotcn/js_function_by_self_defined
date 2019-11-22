@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="d">
+      <p>Content</p>
+      <p>Further Elaborated</p>
+    </div>
+    <script>
+      onload = (function() {
+        const d = document.getElementById('d')
+        console.log(d.outerHTML)
+        console.log(d.innerHTML)
+        d.insertAdjacentHTML('afterend', 'wawawa')
+        var body = document.getElementsByTagName('body')[0]
+        var s = document.createElement('div')
+        s.innerHTML = 'You are hero!'
+        body.appendChild(s)
+      })()
+    </script>
+  </body>
+</html>
