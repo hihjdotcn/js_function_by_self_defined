@@ -19,6 +19,7 @@ console.log(Math.ceil(4.1))
 // 获取范围内的随机数
 function randomNumber(min, max) {
   let target = min + Math.round(Math.random() * (max - min))
+  if(target === 0) target = 1
   return target
 }
 console.log(randomNumber(2, 9))
