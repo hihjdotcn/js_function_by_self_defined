@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .marginTop20 {
+        margin-top: 20px;
+      }
+      .triangle {
+        height: 0px;
+        width: 0px;
+        border-color: red blue green pink;
+        border-style: solid;
+        border-width: 30px;
+      }
+      .single-triangle {
+        height: 0;
+        width: 0;
+        border-color: red transparent transparent transparent;
+        border-style: solid;
+        border-width: 30px;
+      }
+      .draw-triangle {
+        width: 30px;
+        height: 30px;
+        background: red;
+        clip-path: polygon(0px 0px, 0px 30px, 30px 0px);
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="triangle marginTop20"></div>
+    <div class="single-triangle marginTop20"></div>
+    <div class="draw-triangle marginTop20"></div>
+  </body>
+</html>
