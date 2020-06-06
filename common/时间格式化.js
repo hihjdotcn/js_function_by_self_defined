@@ -1,7 +1,8 @@
-var d = new Date()
+var d = new Date('2020-02-21')
+console.log(d.toJSON())
 
 console.log(d)
-console.log(d.toJSON())
+let jsonDate = d.toJSON()
 console.log(d.toString())
 console.log(d.toLocaleDateString())
 console.log(d.toDateString())

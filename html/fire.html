@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>火焰动画</title>
+    <style>
+        .fire {
+            width: 550px;
+            height: 400px;
+            background: #1c0866;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="fire" src="../files/fire2.gif" alt="">
+    <!-- <canvas id="canvas"></canvas>
+    <script>
+        window.onload = function () {
+            var img = new Image();
+            img.src = "../files/fire.gif";
+            img.onload = function () {
+                var canvas = document.querySelector("#canvas");
+                var cxt = canvas.getContext("2d");
+                canvas.width = 293;
+                canvas.height = 220;
+                cxt.drawImage(img, 0, 0, canvas.width, canvas.height);
+                var imageData = cxt.getImageData(0, 0, canvas.width, canvas.height);
+                var imageData_length = imageData.data.length / 4;
+                // 解析之后进行算法运算
+                for (var i = 0; i < imageData_length; i++) {
+                    imageData.data[i * 4 + 1] = 0;
+                    imageData.data[i * 4 + 2] = 0;
+                }
+                cxt.putImageData(imageData, 0, 0);
+
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getViewportSize(w) {
+            w = w || window
+            // 除了IE 8及更早版本以外，其他浏览器都能用
+            if (w.innerWidth != null) return { u: w.innerWidth, h: w.innerHeight }
+
+            console.log(w.innerWidth, w.innerHeight)
+
+            // 对标准模式下的IE
+            var d = w.document
+            if (document.compatMode == "CSS1Compat")
+                return {
+                    u: d.documentElement.clientWidth,
+                    h: d.documentElement.clientHeight
+                }
+
+            // 对怪异模式下的浏览器
+            return { u: d.body.clientWidth, h: d.body.clientHeight }
+            console.log(d.documentElement.clientWidth, d.documentElement.clientHeight)
+        }
+        getViewportSize()
+    </script>
+
+</body>
+
+</html>
