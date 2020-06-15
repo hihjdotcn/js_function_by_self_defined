@@ -17,17 +17,21 @@ console.log(baseNum(3,4).add(3,7))
 // 在对象上的方法最后 加上return this
 // 把对象在返回回来，对象就继续调用方法了，所以就可以链式操作了。
 var obj = {}
+let newStr = ''
 obj.a = function () {
   console.log('a')
+  newStr += 'a'
   console.log(this)
   return this
 }
 obj.b = function () {
   console.log('b')
+  newStr += 'b'
   console.log(this)
   return this
 }
-obj.a().b()
+obj.b().a()
+console.log(newStr)
 
 // 以上方式换种写法
 var obj = {
