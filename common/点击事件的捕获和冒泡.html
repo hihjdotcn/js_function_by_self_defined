@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div onclick="log(1)">
+    <div onclick="log(2)">
+      <div onclick="log(3)">
+        <div onclick="log(4)">
+          click
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function log(msg) {
+      event.stopPropagation()
+      console.log(msg)
+    }
+  </script>
+</body>
+</html>
