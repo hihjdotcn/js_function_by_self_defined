@@ -1,4 +1,5 @@
 var o = {}
+var temp = 6
 Object.defineProperty(o, 'x', {
   value: 3,
   writable: true,
@@ -14,8 +15,12 @@ o.x = 2
 Object.defineProperty(o, 'x', { value: 6 })
 Object.defineProperty(o, 'x', {
   get: function() {
-    return 22
+    return temp
+  },
+  set: function (val) {
+    temp = val + '2'
   }
 })
 console.log(Object.getOwnPropertyNames(o))
+o.x = 8
 console.log(o.x)
