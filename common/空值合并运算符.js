@@ -1,3 +1,5 @@
+// 空值合并运算符， 用两个问号来表示， 只有在null和undefined时才获取后面那个值
+
 const b = 0
 const a = b || 5
 const c = b ?? 6
